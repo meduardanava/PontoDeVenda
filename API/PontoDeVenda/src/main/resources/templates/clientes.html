@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeçeaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,8 +9,8 @@
 <form method="post" th:action="@{/cliente/save}">
     <label>Nome: <input type="text" name="nome"></label>
     <label>CPF: <input type="text" name="cpf"></label>
-    <label>Telefone: <input type="text" name="telefone"></label>
-    <label>Email: <input type="text" name="email"></label>
+    <label>Telefone: <input type="tel" name="telefone"></label>
+    <label>Email: <input type="email" name="email"></label>
     <button type="submit">Salvar</button>
 </form>
 <h1>Lista de clientes</h1>
@@ -27,7 +27,10 @@
     <tbody>
     <tr th:each="cliente : ${clientes}">
         <td th:text="${cliente.id}"></td>
-
+        <td th:text="${cliente.nome}"></td>
+        <td th:text="${cliente.cpf}"></td>
+        <td th:text="${cliente.telefone}"></td>
+        <td th:text="${cliente.email}"></td>
     </tr>
     </tbody>
 </table>

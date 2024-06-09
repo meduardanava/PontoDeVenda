@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos</title>
+</head>
+<body>
+<h1>Adicionar novo produto</h1>
+<form method="post" th:action="@{/produto/save}">
+    <label>Código de barras: <input type="number" name="codBarras"></label>
+    <label>Descrição: <input type="text" name="descricao"></label>
+    <label>Valor: <input type="number" name="valor"></label>
+    <label>Categoria: <input type="text" name="categoria"></label>
+    <button type="submit">Salvar</button>
+</form>
+<h1>Lista de produtos</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Código de Barras</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Categoria</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="produto : ${produtos}">
+        <td th:text="${produto.id}"></td>
+        <td th:text="${produto.codBarras}"></td>
+        <td th:text="${produto.descricao}"></td>
+        <td th:text="${produto.valor}"></td>
+        <td th:text="${produto.categoria}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
