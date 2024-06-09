@@ -12,7 +12,8 @@ import lombok.Setter;
 @Setter
 public class Produto {
     
-    private int id;
+    private Integer id;
+    private Integer codBarras;
     private String descricao;
     private BigDecimal valor;
     private String categoria;
