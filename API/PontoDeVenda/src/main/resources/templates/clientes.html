@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeçeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Adicionar novo cliente</h1>
+<form method="post" th:action="@{/cliente/save}">
+    <label>Nome: <input type="text" name="nome"></label>
+    <label>CPF: <input type="text" name="cpf"></label>
+    <label>Telefone: <input type="text" name="telefone"></label>
+    <label>Email: <input type="text" name="email"></label>
+    <button type="submit">Salvar</button>
+</form>
+<h1>Lista de clientes</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cliente : ${clientes}">
+        <td th:text="${cliente.id}"></td>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

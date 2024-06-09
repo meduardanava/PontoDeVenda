@@ -23,8 +23,8 @@ public class ProdutoService {
         return this.produtoRepository.save(produto);
     }
 
-    public Produto validarProduto(Integer id, String descricao) {
-        return this.produtoRepository.findByIdAndDescricao(id, descricao);
+    public Produto validarProduto(Integer id, Integer codBarras) {
+        return this.produtoRepository.findByIdAndAndCodBarras(id, codBarras);
     }
 
 }

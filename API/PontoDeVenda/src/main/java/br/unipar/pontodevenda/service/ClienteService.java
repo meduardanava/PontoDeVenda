@@ -23,8 +23,8 @@ public class ClienteService {
         return this.clienteRepository.save(cliente);
     }
 
-    public Cliente validarCliente(Integer id, String nome) {
-        return this.clienteRepository.findByIdAndNome(id, nome);
+    public Cliente validarCliente(Integer id, String cpf) {
+        return this.clienteRepository.findByIdAndCpf(id, cpf);
     }
 
 }

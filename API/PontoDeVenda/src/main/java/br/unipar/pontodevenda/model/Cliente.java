@@ -20,6 +20,8 @@ public class Cliente implements Serializable {
 
     private String nome;
 
+    private String cpf;
+
     private String telefone;
 
     private String email;
