@@ -25,8 +25,8 @@ public class ViewPrincipal extends javax.swing.JFrame {
         mnNovaVenda = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mnCadProduto = new javax.swing.JMenuItem();
-        mnCadCliente = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        mnCadClientes = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -34,6 +34,11 @@ public class ViewPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Venda");
 
         mnNovaVenda.setText("Nova Venda");
+        mnNovaVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnNovaVendaActionPerformed(evt);
+            }
+        });
         jMenu1.add(mnNovaVenda);
 
         jMenuBar1.add(jMenu1);
@@ -41,16 +46,26 @@ public class ViewPrincipal extends javax.swing.JFrame {
         jMenu2.setText("Produto");
 
         mnCadProduto.setText("Cadastro");
+        mnCadProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnCadProdutoActionPerformed(evt);
+            }
+        });
         jMenu2.add(mnCadProduto);
 
         jMenuBar1.add(jMenu2);
 
-        mnCadCliente.setText("Cliente");
+        jMenu3.setText("Cliente");
 
-        jMenuItem2.setText("Cadastro");
-        mnCadCliente.add(jMenuItem2);
+        mnCadClientes.setText("Cadastro");
+        mnCadClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnCadClientesActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mnCadClientes);
 
-        jMenuBar1.add(mnCadCliente);
+        jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Relatórios");
         jMenuBar1.add(jMenu4);
@@ -71,17 +86,31 @@ public class ViewPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void mnNovaVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnNovaVendaActionPerformed
+        ViewVenda venda = new ViewVenda();
+        venda.setLocationRelativeTo(this);
+        venda.setVisible(true);
+    }//GEN-LAST:event_mnNovaVendaActionPerformed
+
+    private void mnCadClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCadClientesActionPerformed
+        ViewCadastroCliente cadCliente = new ViewCadastroCliente();
+        cadCliente.setLocationRelativeTo(this);
+        cadCliente.setVisible(true);
+    }//GEN-LAST:event_mnCadClientesActionPerformed
+
+    private void mnCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCadProdutoActionPerformed
+        ViewCadastroProduto cadProduto = new ViewCadastroProduto();
+        cadProduto.setLocationRelativeTo(this);
+        cadProduto.setVisible(true);
+    }//GEN-LAST:event_mnCadProdutoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenu mnCadCliente;
+    private javax.swing.JMenuItem mnCadClientes;
     private javax.swing.JMenuItem mnCadProduto;
     private javax.swing.JMenuItem mnNovaVenda;
     // End of variables declaration//GEN-END:variables

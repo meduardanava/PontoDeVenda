@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import view.ViewPrincipal;
 
 /**
- *
  * @author Gustavo H. Nava
  */
 public class PontoDeVenda {
