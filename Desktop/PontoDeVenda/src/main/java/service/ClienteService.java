@@ -6,6 +6,7 @@ import com.mycompany.pontodevenda.Util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -60,11 +61,9 @@ public class ClienteService {
         Gson gson = new Gson();
         String clienteSalvo = gson.toJson(cliente);
         
-        //
-        // AINDA NÃO ESTÁ TERMINADO
-        //
-        //
-        byte[] input = jsonIn
+        try (OutputStream os = conexao.getOutputStream()) {
+            byte[] input = clienteSalvo.getBytes("utf-8");
+            os.write(input, cliente.getId(), input.length);
+        }        
     }
-    
 }
